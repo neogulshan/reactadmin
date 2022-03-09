@@ -10,6 +10,7 @@ i18n
           en: {
               translations: {
                 "Overview dashboard": "Overview dashboard",
+                "David Greymaax":"David Greymaax"
               }
           },
           ar: {
