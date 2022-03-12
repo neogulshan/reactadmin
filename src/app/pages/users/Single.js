@@ -6,16 +6,16 @@ import Spinner from "../../layouts/Spinner";
 function Single() {
 
     const [getter, setter] = useState({
-        detail: null
+        detail: null,
     })
     const { userId } = useParams();
     // console.log(userId)
 
     function getUserDetail() {
         apiInstance.get(`master/user/${userId}`).then((res) => {
-            setter((prevState) =>({
+            setter((prevState) => ({
                 ...prevState,
-                detail:res.data
+                detail: res.data
             }))
         }).catch((error) => {
             console.log(error)
@@ -29,10 +29,10 @@ function Single() {
     return (
         <>
             {
-                getter.detail != null ? 
-                <h1>{getter.detail.name}</h1>
-                :
-                <Spinner/>
+                getter.detail != null ?
+                    <h1>{getter.detail.name}</h1>
+                    :
+                    <Spinner />
             }
         </>
     )

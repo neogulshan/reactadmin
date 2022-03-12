@@ -40,33 +40,36 @@ function All() {
                     <div className="card">
                         <div className="card-body">
                             <div className="table-responsive">
-                                <table className="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            getter.users.length > 0 ?
-                                                getter.users.map((item, key) => {
-                                                    return (
-                                                        <tr key={key}>
-                                                            <td>{item.name}</td>
-                                                            <td>{item.email}</td>
-                                                            <td><label className="badge badge-success">{item.status}</label></td>
-                                                            <td><Link to={`/user/${item.id}`} className="btn-line-height btn btn-inverse-info btn-icon"><i className="mdi mdi-eye"></i></Link></td>
-                                                        </tr>
-                                                    )
-                                                })
-                                                :
-                                                <Spinner/>
-                                        }
-                                    </tbody>
-                                </table>
+                                {
+                                    getter.users.length > 0 ?
+                                        <table className="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    getter.users.map((item, key) => {
+                                                        return (
+                                                            <tr key={key}>
+                                                                <td>{item.name}</td>
+                                                                <td>{item.email}</td>
+                                                                <td><label className="badge badge-success">{item.status}</label></td>
+                                                                <td><Link to={`/user/${item.id}`} className="btn-line-height btn btn-inverse-info btn-icon"><i className="mdi mdi-eye"></i></Link></td>
+                                                            </tr>
+                                                        )
+                                                    })
+
+                                                }
+                                            </tbody>
+                                        </table>
+                                        :
+                                        <Spinner />
+                                }
                             </div>
                         </div>
                     </div>
