@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import apiInstance from '../../../common/apiInstance'
+import Spinner from '../../layouts/Spinner'
 
 function All() {
 
@@ -62,9 +63,7 @@ function All() {
                                                     )
                                                 })
                                                 :
-                                                <tr className="text-center">
-                                                    <td colSpan={4}>Data Loading ...</td>
-                                                </tr>
+                                                <Spinner/>
                                         }
                                     </tbody>
                                 </table>
