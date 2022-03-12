@@ -3,7 +3,7 @@ const apiInstance = axios.create()
 
 apiInstance.interceptors.request.use(
     async (config) => {
-        config.baseURL = 'https://fakestoreapi.com';
+        config.baseURL = 'https://beta.careerdec.in/api';
         return config;
     },
     async (error) => {
